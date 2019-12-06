@@ -197,8 +197,6 @@ class MailMessage:
             if part.get_content_maintype() == 'multipart':
                 # multipart/* are just containers
                 continue
-            if part.get('Content-Disposition') is None:
-                continue
             filename = part.get_filename()
             if not filename:
                 continue  # this is what happens when Content-Disposition = inline
